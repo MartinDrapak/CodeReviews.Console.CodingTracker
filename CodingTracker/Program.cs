@@ -1,16 +1,16 @@
-﻿using CodingTracker;
-using Spectre.Console;
+﻿using Spectre.Console;
 
 namespace CodingTracker
 {
     class Program
     {
-        DatabaseInteractor Db { get; set; }
+        DatabaseInteractor Db { get; set; } = new();
         public static void Main()
         {
             try
             {
-                Program program = new();
+                UI.WelcomeMessage();
+                UI.EvaluateInput(UI.MainMenu());
             }
             catch (InvalidOperationException ex)
             {
@@ -25,17 +25,12 @@ namespace CodingTracker
                 UI.WriteError($"An unexpected error occurred: {ex.Message}");
                 throw;
             }
+            
         }
         #region properties
         #endregion
         #region constructors
-        Program()
-        {
-            Db = new();
-            UI.WelcomeMessage();
-            UI.EvaluateInput(UI.MainMenu());
-            Dispose();
-        }
+       
         #endregion
         #region methods
         public static void Dispose()

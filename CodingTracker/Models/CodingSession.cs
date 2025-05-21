@@ -1,11 +1,8 @@
 ﻿using CodingTracker.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CodingTracker.Models
 {

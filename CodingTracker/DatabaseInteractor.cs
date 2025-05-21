@@ -1,11 +1,8 @@
 ﻿using CodingTracker.Models;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data.SQLite;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Dapper;
 
 namespace CodingTracker
@@ -152,7 +149,7 @@ namespace CodingTracker
         /// <returns>SQLiteConnection</returns>
         public static SQLiteConnection CreateSqliteConnection()
         {
-            string? connectionString = ConfigurationManager.AppSettings.Get("ConnectionString");
+            string? connectionString = System.Configuration.ConfigurationManager.AppSettings.Get("ConnectionString");
             SQLiteConnection connection = new(connectionString);
             try
             {
