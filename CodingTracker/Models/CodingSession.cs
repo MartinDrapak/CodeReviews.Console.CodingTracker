@@ -77,8 +77,8 @@ namespace CodingTracker.Models
             // Calculate the duration of the session  
             if (SessionStart != null && SessionEnd != null)
             {
-                DateTime start = DateTime.Parse(SessionStart,new CultureInfo("invariant"));
-                DateTime end = DateTime.Parse(SessionEnd,new CultureInfo("invariant"));
+                DateTime start = DateTime.Parse(SessionStart, CultureInfo.InvariantCulture);
+                DateTime end = DateTime.Parse(SessionEnd, CultureInfo.InvariantCulture);
                 TimeSpan duration = end - start;
                 return duration.ToString();
             }

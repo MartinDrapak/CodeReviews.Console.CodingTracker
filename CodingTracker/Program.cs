@@ -4,11 +4,12 @@ namespace CodingTracker
 {
     class Program
     {
-        DatabaseInteractor Db { get; set; } = new();
+       static DatabaseInteractor Db { get; set; } 
         public static void Main()
         {
             try
             {
+                Db = new();
                 UI.WelcomeMessage();
                 UI.EvaluateInput(UI.MainMenu());
             }
